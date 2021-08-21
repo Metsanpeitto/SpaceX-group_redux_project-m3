@@ -1,32 +1,38 @@
-import library from '../../api/api';
-import { RECEIVE_BOOKS } from '../constants/action-types';
+import {
+  RECEIVE_ROCKETS,
+  RECEIVE_DRAGONS,
+  RECEIVE_MISSIONS,
+  ADD_RESERVATION,
+  REMOVE_RESERVATION,
+  RECEIVE_RESERVATIONS,
+} from '../constants/action-types';
 
-export const receiveBooks = (books) => ({
-  type: RECEIVE_BOOKS,
-  books,
+export const receiveRockets = (rockets) => ({
+  type: RECEIVE_ROCKETS,
+  rockets,
 });
 
-export const getBooks = () => (dispatch) => {
-  library.getBooks().then((books) => {
-    dispatch(receiveBooks(books));
-    return books;
-  });
-};
+export const receiveDragons = (dragons) => ({
+  type: RECEIVE_DRAGONS,
+  dragons,
+});
 
-export const addBook = (book) => (dispatch) => {
-  library.addBook(book).then((response) => {
-    if (response === 'Created') {
-      dispatch(getBooks());
-    }
-    return response;
-  });
-};
+export const receiveMissions = (missions) => ({
+  type: RECEIVE_MISSIONS,
+  missions,
+});
 
-export const removeBook = (book) => (dispatch) => {
-  library.removeBook(book).then((response) => {
-    if (response === 'The book was deleted successfully!') {
-      dispatch(getBooks());
-    }
-    return response;
-  });
-};
+export const receiveReservations = (reservations) => ({
+  type: RECEIVE_RESERVATIONS,
+  reservations,
+});
+
+export const removeReservation = (reservations) => ({
+  type: REMOVE_RESERVATION,
+  reservations,
+});
+
+export const addReservation = (reservations) => ({
+  type: ADD_RESERVATION,
+  reservations,
+});

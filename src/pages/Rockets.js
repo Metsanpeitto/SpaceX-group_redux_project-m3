@@ -1,13 +1,17 @@
 import React from 'react';
-import Adder from '../components/Adder';
 import Displayer from '../components/Displayer';
-import Filter from '../components/Filter';
 
-const Books = () => (
-  <div className="books">
-    <Filter />
-    <Displayer />
-    <Adder />
-  </div>
-);
-export default Books;
+function Rockets(props) {
+  console.log(props);
+  const { rockets } = props;
+
+  const layout = (
+    <div className="rockets">
+      <Displayer target="rockets" rockets={rockets} />
+    </div>
+  );
+
+  return layout;
+}
+
+export default Rockets;

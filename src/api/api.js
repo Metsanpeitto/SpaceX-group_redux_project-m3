@@ -1,40 +1,65 @@
 import axios from 'axios';
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
-const appId = 'gtVRbJXENaszGHUmYTTc';
+const urlRockets = 'https://api.spacexdata.com/v3/rockets';
+const urlMissions = 'https://api.spacexdata.com/v3/missions';
+const urlDragons = 'https://api.spacexdata.com/v3/dragons';
 
-const getBooks = async () => axios.get(`${url}/apps/${appId}/books`).then((result) => {
-  const books = [];
+const getMissions = async () => {
+  axios.get(`${urlMissions}`).then((result) => {
+    const missions = [];
+    if (result.status === 200) {
+      const { data } = result;
+      // eslint-disable-next-line no-restricted-syntax
+      data.forEach((item) => {
+        const mission = {
+          mission: item.id,
+          mission_name: item.name,
+          description: item.description,
+        };
+        return missions.push(mission);
+      });
+    }
+    return missions;
+  });
+};
+
+const getDragons = async () => {
+  axios.get(`${urlDragons}`).then((result) => {
+    const rockets = [];
+    if (result.status === 200) {
+      const { data } = result;
+      // eslint-disable-next-line no-restricted-syntax
+      data.forEach((item) => {
+        const rocket = {
+          rocket_id: item.id,
+          rocket_name: item.name,
+          flickr_images: item.flickr_images,
+          type: item.type,
+        };
+        rockets.push(rocket);
+      });
+    }
+    return rockets;
+  });
+};
+
+const getRockets = async () => axios.get(`${urlRockets}`).then((result) => {
+  const rockets = [];
   if (result.status === 200) {
     const { data } = result;
     // eslint-disable-next-line no-restricted-syntax
-    for (const [key, value] of Object.entries(data)) {
-      const id = key;
-      const obj = value;
-      const book = {
-        item_id: id,
-        title: obj[0].title,
-        category: obj[0].category,
+    data.forEach((item) => {
+      const rocket = {
+        rocket_id: item.rocket_id,
+        rocket_name: item.rocket_name,
+        flickr_images: item.flickr_images,
+        description: item.description,
+        active: item.active,
       };
-      books.push(book);
-    }
+      rockets.push(rocket);
+    });
   }
-  return books;
+  return rockets;
 });
 
-const addBook = async (book) => axios
-  .post(`${url}/apps/${appId}/books`, {
-    item_id: book.item_id,
-    title: book.title,
-    category: book.category,
-  })
-  .then((result) => result.data);
-
-const removeBook = async (id) => axios
-  .delete(`${url}/apps/${appId}/books/${id}`, {
-    item_id: id,
-  })
-  .then((result) => result.data)
-  .catch(() => 'error');
-
-export default { getBooks, addBook, removeBook };
+export default { getRockets, getDragons, getMissions };

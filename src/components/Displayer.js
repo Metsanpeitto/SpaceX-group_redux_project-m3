@@ -1,28 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import Bookcard from './Bookcard';
+import RocketCard from './RocketCard';
 
-function Displayer() {
-  const { booksReducer } = useSelector((state) => state);
-  const { books, booksFiltered } = booksReducer;
-  const [booksDisplay, setBooksDisplay] = useState(null);
+function Displayer(props) {
+  // eslint-disable-next-line react/prop-types
+  const { rockets } = props;
+  const [rocketsDisplay, setRocketsDisplay] = useState(null);
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    if (booksFiltered.length > 0) {
-      if (booksFiltered !== booksDisplay) {
-        setBooksDisplay(booksFiltered);
+    if (rockets) {
+      if (rockets !== rocketsDisplay) {
+        setRocketsDisplay(rockets);
       }
-    } else if (books !== booksDisplay) {
-      setBooksDisplay(books);
     }
   });
 
-  if (booksDisplay) {
+  if (rocketsDisplay) {
     return (
-      <div className="books-displayer">
-        {booksDisplay.map((b) => (
-          <Bookcard key={b.title} data={b} />
+      <div className="rockets-displayer">
+        {rocketsDisplay.map((b) => (
+          <RocketCard key={b.title} data={b} />
         ))}
       </div>
     );
