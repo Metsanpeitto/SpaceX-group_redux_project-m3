@@ -5,7 +5,6 @@ function Displayer(props) {
   // eslint-disable-next-line react/prop-types
   const { rockets } = props;
   const [rocketsDisplay, setRocketsDisplay] = useState(null);
-
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     if (rockets) {
@@ -18,8 +17,8 @@ function Displayer(props) {
   if (rocketsDisplay) {
     return (
       <div className="rockets-displayer">
-        {rocketsDisplay.map((b) => (
-          <RocketCard key={b.title} data={b} />
+        {rocketsDisplay.map((r) => (
+          <RocketCard key={r.title} data={r} />
         ))}
       </div>
     );

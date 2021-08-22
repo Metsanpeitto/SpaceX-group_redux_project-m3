@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
     "cra-template-redux": "1.0.3",
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
