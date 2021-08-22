@@ -10,7 +10,6 @@ function Dragons(props) {
 
   useEffect(() => {
     const { dragons } = props;
-    console.log(dragons);
     if (!calledDragon && dragons.length === 0) {
       setCalledDragon(true);
       props.getDragons();
