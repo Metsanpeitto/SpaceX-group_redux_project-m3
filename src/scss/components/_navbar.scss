@@ -1,0 +1,37 @@
+.c-navBar {
+  display: grid;
+  grid-template-columns: 64px auto auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-bottom: 2px solid gray;
+  margin-right: 5%;
+  margin-left: 5%;
+
+  .logo {
+    align-self: center;
+    width: 32px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .menuNav {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    font-size: 12px;
+    list-style: none;
+    list-style-type: none;
+    margin-bottom: unset;
+    margin-left: auto;
+    align-items: center;
+    width: 60%;
+
+    a {
+      text-decoration: none;
+      color: $color-blue;
+    }
+  }
+}

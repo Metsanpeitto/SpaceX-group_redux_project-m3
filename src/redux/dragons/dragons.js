@@ -17,6 +17,7 @@ const reducer = (state = initialState, action) => {
       const { id } = action.reservation;
       const newDragons = [];
       const { dragons } = state;
+      console.log(dragons);
       if (dragons) {
         if (dragons.length > 0) {
           dragons.forEach((d) => {
@@ -29,6 +30,7 @@ const reducer = (state = initialState, action) => {
           });
         }
       }
+      console.log(newDragons);
       return {
         dragons: newDragons,
       };
@@ -41,9 +43,13 @@ const reducer = (state = initialState, action) => {
         if (dragons.length > 0) {
           dragons.forEach((r) => {
             if (r.rocket_id === id) {
-              // eslint-disable-next-line camelcase
-              const { rocket_id, flickr_images, rocket_name } = r;
-              const dragon = { rocket_id, flickr_images, rocket_name };
+              const {
+                // eslint-disable-next-line camelcase
+                rocket_id, flickr_images, rocket_name, description,
+              } = r;
+              const dragon = {
+                rocket_id, flickr_images, rocket_name, description,
+              };
               newDragons.push(dragon);
             } else {
               newDragons.push(r);
@@ -51,8 +57,9 @@ const reducer = (state = initialState, action) => {
           });
         }
       }
+      console.log(newDragons);
       return {
-        rockets: newDragons,
+        dragons: newDragons,
       };
     }
     default:

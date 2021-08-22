@@ -31,6 +31,7 @@ const getDragons = async () => axios.get(`${urlDragons}`).then((result) => {
         rocket_id: item.id,
         rocket_name: item.name,
         flickr_images: item.flickr_images,
+        description: item.description,
         type: item.type,
       };
       dragons.push(dragon);
