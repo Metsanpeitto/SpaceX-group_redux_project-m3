@@ -119,7 +119,6 @@ export const removeReservation = (reservation) => (dispatch) => {
   dispatch(receiveRocketReserveCancelation(reservation));
 
   const { target } = reservation;
-  console.log(reservation);
   if (target === 'rockets') {
     dispatch(receiveRocketReserveCancelation(reservation));
   }
