@@ -324,7 +324,7 @@ button:active {
 
 .c-rocketcard {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 200px auto!important;
   padding: 2%;
   padding-left: 5%;
   padding-right: 5%;
