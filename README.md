@@ -27,7 +27,7 @@ If you want a copy of this file go to the github repository and download it from
 
 ### Live
 
-[Live](https://github.com/Metsanpeitto/spacex-capstone-3/)
+[Live](https://metsanpeitto.github.io/SpaceX-group_redux_project-m3/)
 
 
 ### Setup
