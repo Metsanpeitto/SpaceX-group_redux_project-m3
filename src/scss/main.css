@@ -63,6 +63,7 @@
     top: 0.000001vh;
   }
 }
+
 @keyframes rise {
   0% {
     top: 100vh;
@@ -71,6 +72,7 @@
     top: 0.000001vh;
   }
 }
+
 /*
 *
 * images.scss
@@ -134,84 +136,73 @@ p {
     line-height: 44px;
     letter-spacing: 3px;
   }
-
   h2 {
     font-size: 22px;
     line-height: 24px;
     letter-spacing: 4px;
   }
-
   h3 {
     font-size: 20px;
     line-height: 22px;
     letter-spacing: 0;
   }
-
   h4 {
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.4px;
   }
-
   h5 {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.4px;
   }
-
   h6 {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.6px;
   }
-
   p {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.6px;
   }
 }
+
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 42px;
     line-height: 44px;
     letter-spacing: 3px;
   }
-
   h2 {
     font-size: 22px;
     line-height: 24px;
     letter-spacing: 4px;
   }
-
   h3 {
     font-size: 36px;
     line-height: 22px;
     letter-spacing: 0;
     font-weight: 400;
   }
-
   h4 {
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.4px;
     font-weight: 400;
   }
-
   h5 {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.4px;
     font-weight: 400;
   }
-
   h6 {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 1px;
     font-weight: 400;
   }
-
   p {
     font-size: 14px;
     line-height: 24px;
@@ -219,6 +210,7 @@ p {
     font-weight: 400;
   }
 }
+
 /**
 * buttons.scss
 *
@@ -235,7 +227,8 @@ p {
 */
 /*  Component Buttons  */
 button:active {
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .btn-reserve {
@@ -289,8 +282,10 @@ button:active {
 }
 
 .c-navBar {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 64px auto auto;
+  -ms-grid-columns: 64px auto auto;
+      grid-template-columns: 64px auto auto;
   padding-left: 2.5%;
   padding-right: 2.5%;
   padding-top: 2%;
@@ -299,49 +294,66 @@ button:active {
   margin-right: 5%;
   margin-left: 5%;
 }
+
 .c-navBar .logo {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   width: 32px;
 }
+
 .c-navBar .title {
   font-size: 32px;
 }
+
 .c-navBar .menuNav {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
   font-size: 12px;
   list-style: none;
   list-style-type: none;
   margin-bottom: unset;
   margin-left: auto;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 60%;
 }
+
 .c-navBar .menuNav a {
   text-decoration: none;
   color: #007bff;
 }
 
 .c-rocketcard {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 200px auto!important;
+  -ms-grid-columns: 200px auto;
+      grid-template-columns: 200px auto;
   padding: 2%;
   padding-left: 5%;
   padding-right: 5%;
 }
+
 .c-rocketcard .c-rocketcard-left {
   width: 200px;
 }
+
 .c-rocketcard .c-rocketcard-left .rocket-img {
   width: 200px;
 }
+
 .c-rocketcard .c-rocketcard-right {
   padding: 2%;
   padding-top: 1%;
 }
+
 .c-rocketcard .c-rocketcard-right .title {
   font-size: 24px;
 }
+
 .c-rocketcard .c-rocketcard-right .text-block .reserved-bubble {
   border-radius: 5px;
   background-color: green;
@@ -354,6 +366,7 @@ button:active {
   padding: 0.5%;
   margin-right: unset !important;
 }
+
 .c-rocketcard .c-rocketcard-right .text-block .rocket-description {
   margin-top: 1%;
   font-size: 14px;
@@ -362,6 +375,7 @@ button:active {
   letter-spacing: 0.1px;
   line-height: 18px;
 }
+
 .c-rocketcard .c-rocketcard-right .text-block .rocket-description-badge {
   margin-top: 1%;
   font-size: 14px;
@@ -370,6 +384,7 @@ button:active {
   letter-spacing: 0.1px;
   line-height: 18px;
 }
+
 .c-rocketcard .c-rocketcard-right .text-block .rocket-description-badge::before {
   content: "Reserved";
   border-radius: 5px;
@@ -381,8 +396,8 @@ button:active {
   width: -moz-max-content;
   width: max-content;
   padding: 0.5%;
-  margin-right: 2%;
 }
+
 .c-rocketcard .c-rocketcard-right .actions {
   margin-top: 2%;
 }
@@ -392,13 +407,16 @@ button:active {
   margin-left: auto;
   margin-right: auto;
 }
+
 .l-missions .mission-name {
   font-weight: 800;
   vertical-align: top;
 }
+
 .l-missions .mission-description {
   font-size: 14px;
 }
+
 .l-missions .mission-status .mission-badge-active {
   font-size: 8px;
   font-weight: 700;
@@ -411,6 +429,7 @@ button:active {
   min-width: -moz-max-content;
   min-width: max-content;
 }
+
 .l-missions .mission-status .mission-badge {
   font-size: 8px;
   font-weight: 700;
@@ -424,22 +443,27 @@ button:active {
   min-width: -moz-max-content;
   min-width: max-content;
 }
+
 .l-missions #missions {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
+
 .l-missions #missions td,
 .l-missions #missions th {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
 .l-missions #missions tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
 .l-missions #missions tr:hover {
   background-color: #ddd;
 }
+
 .l-missions #missions th {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -448,16 +472,20 @@ button:active {
 }
 
 .l-myprofile {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: auto auto auto;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   color: #6d757d;
 }
+
 .l-myprofile .group {
   font-size: 24px;
 }
+
 .l-myprofile .reservation {
   border: 2px solid #6d757d;
   max-width: 300px;
@@ -466,7 +494,8 @@ button:active {
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ul {
@@ -483,4 +512,5 @@ h5,
 h6,
 p {
   margin: unset;
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */
