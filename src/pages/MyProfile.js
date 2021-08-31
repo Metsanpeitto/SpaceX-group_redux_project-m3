@@ -9,7 +9,6 @@ function MyProfile(props) {
 
   useEffect(() => {
     const { reservations } = props;
-    console.log(reservations);
     const { rockets, dragons, missions } = reservations;
     setRocketsDisplay(rockets);
     setDragonsDisplay(dragons);
