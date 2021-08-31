@@ -17,6 +17,7 @@ const reducer = (state = initialState, action) => {
       const { id } = action.reservation;
       const newDragons = [];
       const { dragons } = state;
+      console.log(dragons);
       if (dragons) {
         if (dragons.length > 0) {
           dragons.forEach((d) => {
@@ -29,6 +30,7 @@ const reducer = (state = initialState, action) => {
           });
         }
       }
+      console.log(newDragons);
       return {
         dragons: newDragons,
       };
@@ -55,6 +57,7 @@ const reducer = (state = initialState, action) => {
           });
         }
       }
+      console.log(newDragons);
       return {
         dragons: newDragons,
       };
