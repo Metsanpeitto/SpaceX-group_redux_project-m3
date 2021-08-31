@@ -89,7 +89,7 @@ If you are non a technical person you can download the zip file.
 
 =======
 
-## Author
+## Authors
 
 👤 **Abraham Rodriguez**
 
@@ -97,6 +97,13 @@ If you are non a technical person you can download the zip file.
 - Twitter: [@metsanpeitto](https://twitter.com/home)
 - LinkedIn: [Abraham Rodriguez](https://www.linkedin.com/in/abraham-rodriguez-3283a319a/)
 - Portfolio: [Waldenberg](https://portfolio.waldenberginc.com)
+
+👤 **Onur Onat Surmeli**
+
+- GitHub: [@Zibilyonik](https://github.com/Zibilyonik)
+- Twitter: [@OnurSurmeli2](https://twitter.com/OnurSurmeli2)
+- LinkedIn: [Onur Onat Surmeli](https://www.linkedin.com/in/onuronatsurmeli/)
+- Portfolio: [Click Here!](https://zibilyonik.github.io/portfolio/)
 
 =======
 
