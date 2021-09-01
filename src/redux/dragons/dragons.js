@@ -1,7 +1,7 @@
 import {
   RECEIVE_DRAGONS,
   RECEIVE_DRAGON_RESERVE,
-  RECEIVE_DRAGON_RESERVE_CANCELATION,
+  RECEIVE_DRAGON_RESERVE_CANCELLATION,
 } from '../constants/action-types';
 
 const initialState = { dragons: [] };
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
         dragons: newDragons,
       };
     }
-    case RECEIVE_DRAGON_RESERVE_CANCELATION: {
+    case RECEIVE_DRAGON_RESERVE_CANCELLATION: {
       const { id } = action.reservation;
       const newDragons = [];
       const { dragons } = state;

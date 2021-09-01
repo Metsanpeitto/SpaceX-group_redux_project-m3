@@ -1,7 +1,7 @@
 import {
   RECEIVE_ROCKETS,
   RECEIVE_ROCKET_RESERVE,
-  RECEIVE_ROCKET_RESERVE_CANCELATION,
+  RECEIVE_ROCKET_RESERVE_CANCELLATION,
 } from '../constants/action-types';
 
 const initialState = { rockets: [] };
@@ -33,7 +33,7 @@ const rocketsReducer = (state = initialState, action) => {
         rockets: newRockets,
       };
     }
-    case RECEIVE_ROCKET_RESERVE_CANCELATION: {
+    case RECEIVE_ROCKET_RESERVE_CANCELLATION: {
       const { id } = action.reservation;
       const newRockets = [];
       const { rockets } = state;
