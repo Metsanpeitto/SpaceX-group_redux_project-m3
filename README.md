@@ -3,7 +3,6 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
 In this task, we will be working with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
-=======
 
 ## Built With 
 
@@ -12,7 +11,6 @@ In this task, we will be working with the real live data from the SpaceX API. Ou
 - Node.JS
 - SpaceX API
 
-=======
 
 ### Project requirements
 
@@ -87,7 +85,6 @@ If you are non a technical person you can download the zip file.
 
 - Node.JS
 
-=======
 
 ## Authors
 
@@ -105,7 +102,6 @@ If you are non a technical person you can download the zip file.
 - LinkedIn: [Onur Onat Surmeli](https://www.linkedin.com/in/onuronatsurmeli/)
 - Portfolio: [Click Here!](https://zibilyonik.github.io/portfolio/)
 
-=======
 
 ## 🤝 Contributing
 
@@ -113,23 +109,18 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-=======
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-=======
 
 ## Acknowledgments
 
 - Microverse for giving me this chance
 - The amazing code reviewers for making me improve every day :thumbsup:
 
-=======
 
 
 [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
-
-
