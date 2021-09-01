@@ -1,0 +1,66 @@
+.l-missions {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .mission-name {
+    font-weight: 800;
+    vertical-align: top;
+  }
+
+  .mission-description {
+    font-size: 14px;
+  }
+
+  .mission-status {
+    .mission-badge-active {
+      font-size: 8px;
+      font-weight: 700;
+      border-radius: 5px;
+      background-color: $color-green;
+      text-align: center;
+      color: $color-white;
+      line-height: 14px;
+      min-width: max-content;
+    }
+
+    .mission-badge {
+      font-size: 8px;
+      font-weight: 700;
+      border-radius: 5px;
+      border: 2px solid $color-grey;
+      background-color: $color-grey;
+      text-align: center;
+      color: $color-white;
+      line-height: 14px;
+      min-width: max-content;
+    }
+  }
+
+  #missions {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #missions td,
+  #missions th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #missions tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #missions tr:hover {
+    background-color: #ddd;
+  }
+
+  #missions th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: $color-black;
+  }
+}
