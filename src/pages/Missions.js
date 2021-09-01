@@ -7,7 +7,7 @@ import {
   addReservation,
 } from '../redux/api/api';
 
-function Missions(props) {
+const Missions = (props) => {
   const dispatch = useDispatch();
   const [missionsDisplay, setMissionsDisplay] = useState(null);
   const [calledMission, setCalledMission] = useState(null);
@@ -89,7 +89,7 @@ function Missions(props) {
   );
 
   return layout;
-}
+};
 
 const mapStateToProps = (state) => ({
   missions: state.missionsReducer.missions,

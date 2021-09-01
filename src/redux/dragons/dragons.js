@@ -1,7 +1,7 @@
 import {
   RECEIVE_DRAGONS,
   RECEIVE_DRAGON_RESERVE,
-  RECEIVE_DRAGON_RESERVE_CANCELATION,
+  RECEIVE_DRAGON_RESERVE_CANCELLATION,
 } from '../constants/action-types';
 
 const initialState = { dragons: [] };
@@ -17,7 +17,6 @@ const reducer = (state = initialState, action) => {
       const { id } = action.reservation;
       const newDragons = [];
       const { dragons } = state;
-      console.log(dragons);
       if (dragons) {
         if (dragons.length > 0) {
           dragons.forEach((d) => {
@@ -30,12 +29,11 @@ const reducer = (state = initialState, action) => {
           });
         }
       }
-      console.log(newDragons);
       return {
         dragons: newDragons,
       };
     }
-    case RECEIVE_DRAGON_RESERVE_CANCELATION: {
+    case RECEIVE_DRAGON_RESERVE_CANCELLATION: {
       const { id } = action.reservation;
       const newDragons = [];
       const { dragons } = state;
@@ -57,7 +55,6 @@ const reducer = (state = initialState, action) => {
           });
         }
       }
-      console.log(newDragons);
       return {
         dragons: newDragons,
       };

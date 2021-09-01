@@ -57,33 +57,40 @@ const reservationsReducer = (state = initialState, action) => {
     case REMOVE_RESERVATION: {
       const { id, target } = action.reservation;
       const { rockets, dragons, missions } = state.reservations;
+      let newRockets = [];
+      let newDragons = [];
+      let newMissions = [];
+
       if (target === 'rockets') {
-        const newRockets = [];
         rockets.forEach((name) => {
           if (name !== id) {
             newRockets.push(name);
           }
         });
+      } else {
+        newRockets = rockets;
       }
       if (target === 'dragons') {
-        const newDragons = [];
         dragons.forEach((name) => {
           if (name !== id) {
             newDragons.push(name);
           }
         });
+      } else {
+        newDragons = dragons;
       }
 
       if (target === 'missions') {
-        const newMissions = [];
         missions.forEach((name) => {
           if (name !== id) {
             newMissions.push(name);
           }
         });
+      } else {
+        newMissions = missions;
       }
 
-      const reservations = { rockets, dragons, missions };
+      const reservations = { rockets: newRockets, dragons: newDragons, missions: newMissions };
       return {
         reservations,
       };

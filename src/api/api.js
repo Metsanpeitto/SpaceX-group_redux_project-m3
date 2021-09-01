@@ -11,7 +11,7 @@ const getMissions = async () => axios.get(`${urlMissions}`).then((result) => {
     // eslint-disable-next-line no-restricted-syntax
     data.forEach((item) => {
       const mission = {
-        id: item.mission_id,
+        id: item.mission_name,
         name: item.mission_name,
         description: item.description,
       };

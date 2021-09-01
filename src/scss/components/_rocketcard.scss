@@ -1,6 +1,6 @@
 .c-rocketcard {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 200px auto;
   padding: 2%;
   padding-left: 5%;
   padding-right: 5%;
@@ -10,6 +10,7 @@
 
     .rocket-img {
       width: 200px;
+      height: 150px;
     }
   }
 
@@ -58,8 +59,8 @@
           font-size: 12px;
           font-weight: 200;
           width: max-content;
-          padding: 0.5%;
-          margin-right: 2%;
+          padding: 0.3%;
+          margin-right: 0.5%;
         }
       }
     }
