@@ -39,15 +39,18 @@ function rocketcard(props) {
   };
 
   return (
-    <div className="rocketcard" id={id}>
-      <div className="rocketcard-left">
+    <div className="c-rocketcard" id={id}>
+      <div className="c-rocketcard-left">
         <img src={img} alt="" className="rocket-img" />
       </div>
-      <div className="rocketcard-right">
+      <div className="c-rocketcard-right">
         <h3 className="title">{title}</h3>
         <div className="text-block">
-          {registered ? <div className="reserved-bubble">Reserved</div> : null}
-          <p className="rocket-description">{text}</p>
+          {registered ? (
+            <p className="rocket-description-badge">{text}</p>
+          ) : (
+            <p className="rocket-description">{text}</p>
+          )}
         </div>
 
         <div className="actions">

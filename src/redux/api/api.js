@@ -10,9 +10,9 @@ import {
   RECEIVE_ROCKET_RESERVE,
   RECEIVE_DRAGON_RESERVE,
   RECEIVE_MISSION_RESERVE,
-  RECEIVE_ROCKET_RESERVE_CANCELATION,
-  RECEIVE_DRAGON_RESERVE_CANCELATION,
-  RECEIVE_MISSION_RESERVE_CANCELATION,
+  RECEIVE_ROCKET_RESERVE_CANCELLATION,
+  RECEIVE_DRAGON_RESERVE_CANCELLATION,
+  RECEIVE_MISSION_RESERVE_CANCELLATION,
 } from '../constants/action-types';
 
 export const receiveRockets = (rockets) => ({
@@ -75,8 +75,8 @@ export const receiveRocketReserve = (reservation) => ({
   reservation,
 });
 
-export const receiveRocketReserveCancelation = (reservation) => ({
-  type: RECEIVE_ROCKET_RESERVE_CANCELATION,
+export const receiveRocketReserveCancellation = (reservation) => ({
+  type: RECEIVE_ROCKET_RESERVE_CANCELLATION,
   reservation,
 });
 
@@ -85,8 +85,8 @@ export const receiveDragonReserve = (reservation) => ({
   reservation,
 });
 
-export const receiveDragonReserveCancelation = (reservation) => ({
-  type: RECEIVE_DRAGON_RESERVE_CANCELATION,
+export const receiveDragonReserveCancellation = (reservation) => ({
+  type: RECEIVE_DRAGON_RESERVE_CANCELLATION,
   reservation,
 });
 
@@ -95,8 +95,8 @@ export const receiveMissionReserve = (reservation) => ({
   reservation,
 });
 
-export const receiveMissionReserveCancelation = (reservation) => ({
-  type: RECEIVE_MISSION_RESERVE_CANCELATION,
+export const receiveMissionReserveCancellation = (reservation) => ({
+  type: RECEIVE_MISSION_RESERVE_CANCELLATION,
   reservation,
 });
 
@@ -116,16 +116,16 @@ export const addReservation = (reservation) => (dispatch) => {
 
 export const removeReservation = (reservation) => (dispatch) => {
   dispatch(removeReserve(reservation));
-  dispatch(receiveRocketReserveCancelation(reservation));
+  dispatch(receiveRocketReserveCancellation(reservation));
 
   const { target } = reservation;
   if (target === 'rockets') {
-    dispatch(receiveRocketReserveCancelation(reservation));
+    dispatch(receiveRocketReserveCancellation(reservation));
   }
   if (target === 'dragons') {
-    dispatch(receiveDragonReserveCancelation(reservation));
+    dispatch(receiveDragonReserveCancellation(reservation));
   }
   if (target === 'missions') {
-    dispatch(receiveMissionReserveCancelation(reservation));
+    dispatch(receiveMissionReserveCancellation(reservation));
   }
 };

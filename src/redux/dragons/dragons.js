@@ -1,7 +1,7 @@
 import {
   RECEIVE_DRAGONS,
   RECEIVE_DRAGON_RESERVE,
-  RECEIVE_DRAGON_RESERVE_CANCELATION,
+  RECEIVE_DRAGON_RESERVE_CANCELLATION,
 } from '../constants/action-types';
 
 const initialState = { dragons: [] };
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
         dragons: newDragons,
       };
     }
-    case RECEIVE_DRAGON_RESERVE_CANCELATION: {
+    case RECEIVE_DRAGON_RESERVE_CANCELLATION: {
       const { id } = action.reservation;
       const newDragons = [];
       const { dragons } = state;
@@ -41,9 +41,13 @@ const reducer = (state = initialState, action) => {
         if (dragons.length > 0) {
           dragons.forEach((r) => {
             if (r.rocket_id === id) {
-              // eslint-disable-next-line camelcase
-              const { rocket_id, flickr_images, rocket_name } = r;
-              const dragon = { rocket_id, flickr_images, rocket_name };
+              const {
+                // eslint-disable-next-line camelcase
+                rocket_id, flickr_images, rocket_name, description,
+              } = r;
+              const dragon = {
+                rocket_id, flickr_images, rocket_name, description,
+              };
               newDragons.push(dragon);
             } else {
               newDragons.push(r);
@@ -52,7 +56,7 @@ const reducer = (state = initialState, action) => {
         }
       }
       return {
-        rockets: newDragons,
+        dragons: newDragons,
       };
     }
     default:

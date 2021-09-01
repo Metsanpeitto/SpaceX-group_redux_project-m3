@@ -1,7 +1,7 @@
 import {
   RECEIVE_MISSIONS,
   RECEIVE_MISSION_RESERVE,
-  RECEIVE_MISSION_RESERVE_CANCELATION,
+  RECEIVE_MISSION_RESERVE_CANCELLATION,
 } from '../constants/action-types';
 
 const initialState = { missions: [] };
@@ -33,7 +33,7 @@ const missionsReducer = (state = initialState, action) => {
         missions: newMissions,
       };
     }
-    case RECEIVE_MISSION_RESERVE_CANCELATION: {
+    case RECEIVE_MISSION_RESERVE_CANCELLATION: {
       const { id } = action.reservation;
       const newMissions = [];
       const { missions } = state;

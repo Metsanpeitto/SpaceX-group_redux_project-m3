@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../img/planet.svg';
 
 const Navbar = () => (
-  <nav className="navBar">
+  <nav className="c-navBar">
+    <img src={Logo} alt="" className="logo" />
     <h1 className="title">Space Travelers` Hub</h1>
     <ul className="menuNav">
       <li key={1}>
@@ -20,6 +22,7 @@ const Navbar = () => (
           Missions
         </Link>
       </li>
+      |
       <li key={4}>
         <Link to="/myprofile" exact="true">
           My Profile

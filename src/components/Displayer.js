@@ -18,7 +18,7 @@ function Displayer(props) {
     return (
       <div className="rockets-displayer">
         {rocketsDisplay.map((r) => (
-          <RocketCard key={r.title} data={r} />
+          <RocketCard key={r.rocket_id} data={r} />
         ))}
       </div>
     );

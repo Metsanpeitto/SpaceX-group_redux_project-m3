@@ -7,7 +7,7 @@ import {
   addReservation,
 } from '../redux/api/api';
 
-function Missions(props) {
+const Missions = (props) => {
   const dispatch = useDispatch();
   const [missionsDisplay, setMissionsDisplay] = useState(null);
   const [calledMission, setCalledMission] = useState(null);
@@ -37,53 +37,59 @@ function Missions(props) {
   });
 
   const layout = (
-    <div className="content">
-      <table>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th> </th>
-        </tr>
-        {missionsDisplay
-          ? missionsDisplay.map((m) => (
-            <tr key={m.mission_name}>
-              <td className="mission-name">{m.name}</td>
-              <td className="mission-description">{m.description}</td>
-              <td className="mission-status">
-                {' '}
-                {m.reserved ? 'Registered' : null}
-              </td>
-              <td className="mission-action">
-                {m.reserved ? (
-                  <button
-                    type="button"
-                    id={m.id}
-                    className="btn-reserve-cancel"
-                    onClick={removeReserve}
-                  >
-                    Cancel Reservation
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    id={m.id}
-                    className="btn-reserve"
-                    onClick={reserve}
-                  >
-                    Reserve
-                  </button>
-                )}
-              </td>
-            </tr>
-          ))
-          : null}
+    <div className="l-missions">
+      <table id="missions">
+        <tbody>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th> </th>
+          </tr>
+          {missionsDisplay
+            ? missionsDisplay.map((m) => (
+              <tr key={m.id}>
+                <td className="mission-name">{m.name}</td>
+                <td className="mission-description">{m.description}</td>
+                <td className="mission-status">
+                  {' '}
+                  {m.reserved ? (
+                    <h6 className="mission-badge-active">Active Member</h6>
+                  ) : (
+                    <h6 className="mission-badge">NOT A MEMBER</h6>
+                  )}
+                </td>
+                <td className="mission-action">
+                  {m.reserved ? (
+                    <button
+                      type="button"
+                      id={m.id}
+                      className="btn-reserve-mission-cancel"
+                      onClick={removeReserve}
+                    >
+                      Leave Mission
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      id={m.id}
+                      className="btn-reserve-mission"
+                      onClick={reserve}
+                    >
+                      Join Mission
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))
+            : null}
+        </tbody>
       </table>
     </div>
   );
 
   return layout;
-}
+};
 
 const mapStateToProps = (state) => ({
   missions: state.missionsReducer.missions,
