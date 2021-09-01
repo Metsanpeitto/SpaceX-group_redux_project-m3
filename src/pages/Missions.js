@@ -20,7 +20,7 @@ const Missions = (props) => {
   };
 
   const reserve = (e) => {
-    const id = e.currentTarget.parentNode.parentNode.firstChild.innerText;
+    const { id } = e.currentTarget;
     const data = { target: 'missions', id };
     dispatch(addReservation(data));
   };
