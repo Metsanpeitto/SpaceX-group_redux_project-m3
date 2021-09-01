@@ -61,9 +61,6 @@ const reservationsReducer = (state = initialState, action) => {
       let newDragons = [];
       let newMissions = [];
 
-      console.log(id);
-      console.log(target);
-      console.log(rockets);
       if (target === 'rockets') {
         rockets.forEach((name) => {
           if (name !== id) {
