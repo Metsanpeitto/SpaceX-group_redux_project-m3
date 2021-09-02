@@ -2,7 +2,7 @@
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-Hi! In this task, we will be working with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+In this task, we will be working with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 ## Built With 
 
@@ -12,9 +12,9 @@ Hi! In this task, we will be working with the real live data from the SpaceX API
 - SpaceX API
 
 
-### Project requirements
+### Project Description Video
 
-
+[Google Drive Link](https://drive.google.com/file/d/1XBqgtK5_6PkkRqze9iCV1zerPhB9IeM2/view?usp=sharing)
 
 ## Getting Started
 
