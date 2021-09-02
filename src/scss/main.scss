@@ -1,0 +1,86 @@
+/* -----------------------------------------------------------------------------------
+
+    Template Name: Portfolio
+    Description: This is a portfolio project. Built for Microverse.
+    Author: Abraham Rodriguez ( Abi )
+    Author URI: https://portfolio.waldenberginc.com
+
+-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+   Folder Architecture
+
+   1._style
+   |
+   |
+   |
+   |___1.1 abstract
+   |              |
+   |              |
+   |              |___1.1.1 variables
+   |
+   |
+   |___1.2 base
+   |           |
+   |           |
+   |           |___1.2.1 animations
+   |           |
+   |           |
+   |           |___1.2.2 images
+   |           |
+   |           |
+   |           |___1.2.3 typography
+   |
+   |
+   |___1.3 components
+   |                 |
+   |                 |
+   |                 |___1.3.1 buttons
+   |                 |
+   |                 |
+   |                 |___1.3.2 navbar
+   |                 |
+   |                 |
+   |                 |___1.3.3 rocketcard
+   |
+   |___1.4 layout
+                 |
+                 |
+                 |___1.4.1 missions
+                 |
+                 |
+                 |___1.4.2 myprofile
+                 |
+                 |
+                 |___1.4.3 rockets
+
+*/
+@import "abstract/variables";
+@import "base/animations";
+@import "base/images";
+@import "base/typography";
+@import "components/buttons";
+@import "components/navbar";
+@import "components/rocketcard";
+@import "layout/missions";
+@import "layout/myprofile";
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: unset;
+  display: contents;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: unset;
+}
