@@ -35,7 +35,7 @@ const Missions = () => {
     }
   });
 
-  const layout = (
+  return (
     <div className="l-missions">
       <table id="missions">
         <tbody>
@@ -86,8 +86,6 @@ const Missions = () => {
       </table>
     </div>
   );
-
-  return layout;
 };
 
 export default Missions;
