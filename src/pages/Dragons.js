@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import store from '../redux/configureStore';
+import { useSelector, useDispatch } from 'react-redux';
 import Displayer from '../components/Displayer';
 import { getDragons } from '../redux/api/api';
 
-function Dragons(props) {
+function Dragons() {
   const [dragonsDisplay, setDragonsDisplay] = useState(null);
   const [calledDragon, setCalledDragon] = useState(null);
+  const dragons = useSelector((state) => state.dragonsReducer.dragons);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const { dragons } = props;
     if (!calledDragon && dragons.length === 0) {
       setCalledDragon(true);
-      props.getDragons();
+      dispatch(getDragons());
     }
     if (dragons !== undefined && dragons !== dragonsDisplay) {
       setDragonsDisplay(dragons);
@@ -27,8 +27,4 @@ function Dragons(props) {
   return layout;
 }
 
-const mapStateToProps = (state) => ({
-  dragons: state.dragonsReducer.dragons,
-});
-
-export default connect(mapStateToProps, { store, getDragons })(Dragons);
+export default Dragons;

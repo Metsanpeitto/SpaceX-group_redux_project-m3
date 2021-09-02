@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import store from '../redux/configureStore';
+import { useSelector } from 'react-redux';
 
 const Group = (data) => {
   const items = data.data;
@@ -11,13 +10,13 @@ const Group = (data) => {
   ));
 };
 
-function MyProfile(props) {
+function MyProfile() {
   const [rocketsDisplay, setRocketsDisplay] = useState(null);
   const [dragonsDisplay, setDragonsDisplay] = useState(null);
   const [missionsDisplay, setMissionsDisplay] = useState(null);
+  const reservations = useSelector((state) => state.reservationsReducer.reservations);
 
   useEffect(() => {
-    const { reservations } = props;
     const { rockets, dragons, missions } = reservations;
     if (rockets.length > 0) {
       setRocketsDisplay(rockets);
@@ -56,8 +55,4 @@ function MyProfile(props) {
   return layout;
 }
 
-const mapStateToProps = (state) => ({
-  reservations: state.reservationsReducer.reservations,
-});
-
-export default connect(mapStateToProps, { store })(MyProfile);
+export default MyProfile;

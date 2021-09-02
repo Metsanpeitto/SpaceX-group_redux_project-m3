@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import store from '../redux/configureStore';
+import { useSelector, useDispatch } from 'react-redux';
 import Displayer from '../components/Displayer';
 import { getRockets } from '../redux/api/api';
 
-function Rockets(props) {
+function Rockets() {
   const [rocketsDisplay, setRocketsDisplay] = useState(null);
   const [calledRocket, setCalledRocket] = useState(null);
+  const rockets = useSelector((state) => state.rocketsReducer.rockets);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const { rockets } = props;
     if (!calledRocket && rockets.length === 0) {
       setCalledRocket(true);
-      props.getRockets();
+      dispatch(getRockets());
     }
     if (rockets !== undefined && rockets !== rocketsDisplay) {
       setRocketsDisplay(rockets);
@@ -27,8 +27,4 @@ function Rockets(props) {
   return layout;
 }
 
-const mapStateToProps = (state) => ({
-  rockets: state.rocketsReducer.rockets,
-});
-
-export default connect(mapStateToProps, { store, getRockets })(Rockets);
+export default Rockets;

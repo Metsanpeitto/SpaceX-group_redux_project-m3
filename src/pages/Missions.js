@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
-import store from '../redux/configureStore';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getMissions,
   removeReservation,
   addReservation,
 } from '../redux/api/api';
 
-const Missions = (props) => {
+const Missions = () => {
   const dispatch = useDispatch();
   const [missionsDisplay, setMissionsDisplay] = useState(null);
   const [calledMission, setCalledMission] = useState(null);
+  const missions = useSelector((state) => state.missionsReducer.missions);
 
   // eslint-disable-next-line no-unused-vars
   const removeReserve = (e) => {
@@ -26,9 +26,8 @@ const Missions = (props) => {
   };
 
   useEffect(() => {
-    const { missions } = props;
     if (!calledMission && missions.length === 0) {
-      props.getMissions();
+      dispatch(getMissions());
     }
     if (missions !== undefined && missions !== missionsDisplay) {
       setCalledMission(true);
@@ -91,13 +90,4 @@ const Missions = (props) => {
   return layout;
 };
 
-const mapStateToProps = (state) => ({
-  missions: state.missionsReducer.missions,
-});
-
-export default connect(mapStateToProps, {
-  store,
-  removeReservation,
-  addReservation,
-  getMissions,
-})(Missions);
+export default Missions;
