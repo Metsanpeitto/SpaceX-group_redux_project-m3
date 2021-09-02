@@ -1,7 +1,19 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
+test('renders the navigation bar', () => {
+  render(
+    <Router basename={process.env.PUBLIC_URL}>
+      <Navbar />
+    </Router>,
+  );
+  const linkElement = screen.getByText(/Rockets/i);
+  expect(linkElement).toBeInTheDocument();
+});
+/*
 it('renders correctly', () => {
   const tree = renderer
     .create(
@@ -14,3 +26,4 @@ it('renders correctly', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+*/
