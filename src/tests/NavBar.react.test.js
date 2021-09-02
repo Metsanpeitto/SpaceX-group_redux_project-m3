@@ -13,17 +13,3 @@ test('renders the navigation bar', () => {
   const linkElement = screen.getByText(/Rockets/i);
   expect(linkElement).toBeInTheDocument();
 });
-/*
-it('renders correctly', () => {
-  const tree = renderer
-    .create(
-      <Router basename={process.env.PUBLIC_URL}>
-        <Link to="/" active="true" exact="true">
-          Rockets
-        </Link>
-      </Router>,
-    )
-    .toJSON();
-  expect(tree).toMatchSnapshot();
-});
-*/

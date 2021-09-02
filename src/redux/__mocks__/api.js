@@ -9,6 +9,7 @@ export const receiveRockets = (rockets) => ({
 });
 
 export const getRockets = () => (dispatch) => {
+  console.log(rockets);
   dispatch(receiveRockets(rockets));
   return rockets;
 };
